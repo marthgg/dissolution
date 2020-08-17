@@ -1,0 +1,16 @@
+This folder contains the scripts for dissolution simulations.
+
+The folder "python/setup" contains three files:
+- makeSystem.py: contain functions for building up the setup
+- dissolution.py: contian functions to find number of neighbors and remove voxles
+- convenience.py: set color, convert to boolean, and define empty matrixes
+
+The folder "runScripts" contains two files:
+- dissolution_buildSystem.py: Build a system from scratch and dissolves it
+- dissolution_dataFiles.py: Import a .raw file and dissolve it
+
+To run the disslution-script, a path to the setup-folder must be provided.
+
+Requirements:
+- numpy
+- matplotlib
