@@ -32,6 +32,9 @@ maxCluster = 0
 dislocationHeight = 0
 dislocationDepth  = 0
 
+# Number of timesteps
+timesteps = 15
+
 
 # ====== MAKE SYSTEM ======
 
@@ -54,6 +57,10 @@ dislocations = createDislocation(voxels, dislocationHeight, dislocationDepth, de
 removeCorners = []; removeEdges = []; removeTerraces = []; removeImpurities = []; removeBulk = []
 sumCorners = [];    sumEdges = [];    sumTerraces = [];    sumImpurities = []; sumBulk = []; totalVoxels = []
 
+# Make folders for images and binary files
+if not os.path.exists(images):
+    os.makedirs(images)
+
 
 # ====== RUN SIMULATION ======
 
@@ -70,10 +77,13 @@ plotFigure(voxels, gridSize, colors)
 plt.savefig('images/plot000.png', dpi=300)
 plt.close()
 
+output = open("binaries/output000.bin", "wb")
+output.write(voxels)
+output.close()
 
 # Start loop
 
-time = 500
+time = timesteps
 
 for t in range(1,time+1):
     print(t)
@@ -100,10 +110,19 @@ for t in range(1,time+1):
 
     if t < 10:
         plt.savefig('images/plot00'+str(t)+'.png', dpi=300)
+        output = open('binaries/output00'+str(t)+'.bin', "wb")
+        output.write(voxels)
+        output.close()
     if t > 9 and t < 100:
         plt.savefig('images/plot0'+str(t)+'.png', dpi=300)
+        output = open('binaries/output0'+str(t)+'.bin', "wb")
+        output.write(voxels)
+        output.close()
     if t > 99:
         plt.savefig('images/plot'+str(t)+'.png', dpi=300)
+        output = open('binaries/output0'+str(t)+'.bin', "wb")
+        output.write(voxels)
+        output.close()
 
     plt.close()
 
