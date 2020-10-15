@@ -58,8 +58,11 @@ removeCorners = []; removeEdges = []; removeTerraces = []; removeImpurities = []
 sumCorners = [];    sumEdges = [];    sumTerraces = [];    sumImpurities = []; sumBulk = []; totalVoxels = []
 
 # Make folders for images and binary files
-if not os.path.exists(images):
-    os.makedirs(images)
+if not os.path.exists("images"):
+    os.makedirs("images")
+
+if not os.path.exists("binaries"):
+    os.makedirs("binaries")
 
 
 # ====== RUN SIMULATION ======
