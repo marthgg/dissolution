@@ -9,6 +9,10 @@ The folder "runScripts" contains two files:
 - dissolution_buildSystem.py: Build a system from scratch and dissolves it
 - dissolution_dataFiles.py: Import a .raw file and dissolve it
 
+The folder "analyse" contains two files:
+- plot_removedVoxels.py: An example on how to plot the number of removed voxels after each iteration
+- makeDistanceMaps.py: An example on how to make distance maps from the generated binary files
+
 To run the disslution-script, a path to the setup-folder must be provided.
 
 Requirements:
